@@ -11,6 +11,7 @@
 		30222B2B1EF58BAC00FB6BFC /* EP+configureViewsToState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30222B2A1EF58BAC00FB6BFC /* EP+configureViewsToState.swift */; };
 		303C9DF91EF59A4600B8A7AC /* 2ndVC+ExpandingTransitionPresentedVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C9DF81EF59A4600B8A7AC /* 2ndVC+ExpandingTransitionPresentedVCDelegate.swift */; };
 		303C9DFB1EF59CB300B8A7AC /* 2ndVC+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C9DFA1EF59CB300B8A7AC /* 2ndVC+UIScrollViewDelegate.swift */; };
+		30670EB71EF6BCE200A11E60 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30670EB61EF6BCE200A11E60 /* CollectionViewCell.swift */; };
 		3071E3651EF573FD005C333B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071E3641EF573FD005C333B /* AppDelegate.swift */; };
 		3071E3671EF573FD005C333B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071E3661EF573FD005C333B /* ViewController.swift */; };
 		3071E36C1EF573FD005C333B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3071E36B1EF573FD005C333B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		30222B2A1EF58BAC00FB6BFC /* EP+configureViewsToState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EP+configureViewsToState.swift"; sourceTree = "<group>"; };
 		303C9DF81EF59A4600B8A7AC /* 2ndVC+ExpandingTransitionPresentedVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2ndVC+ExpandingTransitionPresentedVCDelegate.swift"; sourceTree = "<group>"; };
 		303C9DFA1EF59CB300B8A7AC /* 2ndVC+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2ndVC+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		30670EB61EF6BCE200A11E60 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3071E3611EF573FD005C333B /* BetterCellExpandingTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterCellExpandingTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3071E3641EF573FD005C333B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3071E3661EF573FD005C333B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30670EB51EF6BCCA00A11E60 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				30670EB61EF6BCE200A11E60 /* CollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		3071E3581EF573FD005C333B = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 				3071E3661EF573FD005C333B /* ViewController.swift */,
 				3071E3761EF574A9005C333B /* VC+setup.swift */,
 				308766461EF581AF00F4B0CF /* VC+ExpandingTransitionPresentingVCDelegate.swift */,
+				30670EB51EF6BCCA00A11E60 /* CollectionViewCell */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				308766471EF581AF00F4B0CF /* VC+ExpandingTransitionPresentingVCDelegate.swift in Sources */,
 				308766451EF57FFE00F4B0CF /* Protocol.swift in Sources */,
 				30222B291EF5884200FB6BFC /* EP+sliceSnapshotsIn.swift in Sources */,
+				30670EB71EF6BCE200A11E60 /* CollectionViewCell.swift in Sources */,
 				303C9DF91EF59A4600B8A7AC /* 2ndVC+ExpandingTransitionPresentedVCDelegate.swift in Sources */,
 				3071E3651EF573FD005C333B /* AppDelegate.swift in Sources */,
 				308766411EF57B0A00F4B0CF /* ExpandingTransition.swift in Sources */,
@@ -327,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HarryCodes.BetterCellExpandingTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -341,7 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HarryCodes.BetterCellExpandingTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
