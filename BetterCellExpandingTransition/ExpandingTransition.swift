@@ -20,8 +20,8 @@ class ExpandingTransition: NSObject, UIViewControllerAnimatedTransitioning {
   var presentingViewController: UIViewController!
   var presentedViewController: UIViewController!
   
-  var targetSnapshot: UIView!
   var targetContainer: UIView!
+  var targetSnapshot: UIView!
   var topRegionSnapshot: UIView!
   var bottomRegionSnapshot: UIView!
   var navigationBarSnapshot: UIView!
@@ -35,6 +35,16 @@ class ExpandingTransition: NSObject, UIViewControllerAnimatedTransitioning {
   }
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    /**
+     - From ExpandingTransitionPresentingVCDelegate, we get the targetView (which is the cell we tap)
+     - From transitionContext, we get backgroundVC and foregroundVC
+     - From backgroundVC and targerView, we ger targetFrame
+     - From backgroungVC and targetFrame, we get topSnapshot, bottomSnapshot, navBarSnapshot
+       From targetFrame and targetView, we get targetSnapshot (snapshot of the cell) and targetContainer (an expanding UIView)
+     - Add the targetSnapshot and foregroundView to the targetContainer
+     - Add targetContainer, topSnapshot, bottomSnapshot and navBarSnapshot to the transitionContext.containerView
+     - Animate
+   */
     let containerView = transitionContext.containerView
     let duration = transitionDuration(using: transitionContext)
     
@@ -67,12 +77,11 @@ class ExpandingTransition: NSObject, UIViewControllerAnimatedTransitioning {
       self.navigationBarSnapshot.frame = containerView.convert(navigationBarSnapshot.frame, from: navigationBarSnapshot.superview)
     }
     
-//    targetContainer.addSubview(foregroundViewController.view)
+    targetContainer.addSubview(foregroundViewController.view)
     containerView.addSubview(targetContainer)
     containerView.addSubview(topRegionSnapshot)
     containerView.addSubview(bottomRegionSnapshot)
     containerView.addSubview(navigationBarSnapshot)
-    targetContainer.addSubview(foregroundViewController.view)
     
     let width = backgroundViewController.view.bounds.width
     let height = backgroundViewController.view.bounds.height

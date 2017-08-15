@@ -23,11 +23,9 @@ class SecondViewController: UIViewController {
     return scrollView
   }()
   
-  lazy var bgImageView: UIImageView = {
+  let bgImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.image = #imageLiteral(resourceName: "bg")
     imageView.contentMode = .scaleAspectFill
-    imageView.frame = self.scrollView.frame
     return imageView
   }()
   
@@ -36,9 +34,10 @@ class SecondViewController: UIViewController {
     
     // Do any additional setup after loading the view.
     self.transitioningDelegate = transition
-
+    
     self.view.addSubview(scrollView)
     scrollView.addSubview(bgImageView)
+    bgImageView.frame = scrollView.frame
     scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height*2)
   }
   

@@ -20,7 +20,6 @@ extension ExpandingTransition {
     targetSnapshot = targetView.snapshotView(afterScreenUpdates: true)
     
     targetContainer = UIView(frame: targetFrame)
-    targetContainer.backgroundColor = .white
     targetContainer.clipsToBounds = true
     targetContainer.addSubview(targetSnapshot)
     

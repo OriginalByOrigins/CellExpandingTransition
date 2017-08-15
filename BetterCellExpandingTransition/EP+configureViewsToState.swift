@@ -17,7 +17,8 @@ extension ExpandingTransition {
       targetContainer.frame = targetFrame
       targetSnapshot.alpha = 1
       foregroundView.alpha = 0
-      navigationBarSnapshot.sizeToFit()
+//      navigationBarSnapshot.sizeToFit()
+      navigationBarSnapshot.frame = CGRect(x: 0, y: 0, width: width, height: 64)
     } else if state == .final {
       topRegionSnapshot.frame = CGRect(x: 0, y: -targetFrame.minY, width: width, height: targetFrame.minY)
       bottomRegionSnapshot.frame = CGRect(x: 0, y: height, width: width, height: height - targetFrame.maxY)

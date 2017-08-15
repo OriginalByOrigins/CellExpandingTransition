@@ -10,10 +10,10 @@ import UIKit
 
 extension ViewController: ExpandingTransitionPresentingVCDelegate {
   func expandingTransitionTargetViewFor(transition: ExpandingTransition) -> UIView {
-   guard
-    let selectedIndexPath = selectedIndexPath,
-    let selectedCell = collectionView.cellForItem(at: selectedIndexPath)
-  else { return UIView()}
+    guard
+      let selectedIndexPath = selectedIndexPath,
+      let selectedCell = collectionView.cellForItem(at: selectedIndexPath)
+    else { return UIView()}
     
     return selectedCell
   }

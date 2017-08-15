@@ -13,7 +13,7 @@ extension SecondViewController: UIScrollViewDelegate {
     let contentOffsetY = scrollView.contentOffset.y
     
     if contentOffsetY > 0 {
-      UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+      UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
         scrollView.contentOffset.y = 0
       }, completion: nil)
       
@@ -24,7 +24,9 @@ extension SecondViewController: UIScrollViewDelegate {
       self.setNeedsStatusBarAppearanceUpdate()
     }
     
-    navigationBarSnapshot?.frame = CGRect(x: 0, y: contentOffsetY, width: self.view.bounds.width, height: -contentOffsetY)
+    if !isBeingDismissed {
+      navigationBarSnapshot?.frame = CGRect(x: 0, y: contentOffsetY, width: self.view.bounds.width, height: -contentOffsetY)
+    }
   }
   
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
